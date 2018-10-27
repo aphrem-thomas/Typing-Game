@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Content from './components/Content';
+import { BrowserRouter } from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Navbar/>
-        <Content/> 
-       </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Content />
+        </div>
+      </BrowserRouter>
     );
   }
 }

@@ -34,6 +34,9 @@
   align-items: center;
   flex-direction: column;
 }
+.typingarea{
+  font-size: 40px;
+}
 
 @keyframes App-logo-spin {
   from {

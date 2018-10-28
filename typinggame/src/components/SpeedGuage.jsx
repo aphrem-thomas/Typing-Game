@@ -4,7 +4,7 @@ import ReactSpeedometer from "react-d3-speedometer";
 class SpeedGuage extends Component {
     render() {
         return (
-            <div>
+            <div className="speedguage">
                 
                 <ReactSpeedometer
                     maxValue={200}

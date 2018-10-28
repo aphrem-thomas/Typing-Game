@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+
 .App {
   text-align: center;
 }
@@ -27,6 +30,7 @@
 }
 
 .intro{
+  font-family:'Playfair Display';
   display: flex;
   width:100%;
   height: 100vh;
@@ -34,15 +38,95 @@
   align-items: center;
   flex-direction: column;
 }
-.typingarea{
-  font-size: 40px;
+.pictures{
+  display:flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+}
+.sun{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.clouds{
+  display:flex;
+  position: absolute;
+  left: 0;
+/* animation: CloudMove 5s ease-in forwards; */
+}
+.clouds:nth-child(5){
+  opacity: .5;
+  animation: CloudMove 5s ease-in forwards;
+  z-index: -10;
 }
 
+.clouds:nth-child(4){
+  opacity: .7;
+  animation: CloudMove 4s ease-in forwards;
+  z-index: -7;
+}
+
+.clouds:nth-child(3){
+  opacity: .4;
+  animation: CloudMove 3s ease-in forwards;
+  z-index: -5;
+}
+
+.clouds:nth-child(2){
+  opacity: .3;
+  animation: CloudMove 2s ease-in forwards;
+  z-index: -4;
+}
+
+.clouds:nth-child(5){
+  opacity: .9;
+  animation: CloudMove 1s ease-in forwards;
+  z-index: -1;
+}
+.typing{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.typingarea{
+  font-size: 40px;
+  margin:50px;
+  width:900px;
+}
+.guages{
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  width: 100%;
+}
+.speedguage{
+  display:flex;
+  flex:1
+}
+.progressIndicator{
+  display: flex;
+  flex:1;
+  height: 100%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+@keyframes CloudMove {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(1500px);
   }
 }

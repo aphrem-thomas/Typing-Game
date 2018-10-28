@@ -11,16 +11,23 @@ class Typing extends Component {
     let lor = lorem();
     lor = lor.toLowerCase();
     let len = lor.length;
-    this.state = { sentence: lor, cursor: 0, speed: 0, textLength: len, accuracy: 0 }
+    this.state = { sentence: lor, cursor: 0, speed: 0, textLength: len, accuracy: 0 }//storing the sentence, curosor position, speed of typing, total length of text and accuracy
   }
-  changeText() {
+  changeText() {              //called when reset button is clicked
     let lor = lorem();
     lor = lor.toLowerCase();
     let len = lor.length;
-    this.setState({ sentence: lor, cursor: 0, speed: 0,textLength:len,accuracy:0 });
-    $('document').ready(() => {
-      $('.typingarea').children().css(({ "color": "black", "font-size": "40px" }));
+    this.setState({ sentence: lor, cursor: 0, speed: 0,textLength:len,accuracy:0 }); //resetting states
+
+    $('document').ready(() => {         //resetting styles  
+      $('.typingarea').children().css(({ 
+      "font-size": "40px",
+      "border-width":0,
+      "border-bottom":"null",
+      "transition": "font-size 10ms ease-in",
+      "color": "black" }));
     })
+    
   }
 
   componentDidMount() {
@@ -33,32 +40,32 @@ class Typing extends Component {
       "transition": "font-size 10ms ease-in",
       "color": "black"
     });
-    
-    document.addEventListener('keydown', (e) => {
+
+    document.addEventListener('keydown', (e) => {                  //event listner for keydown
       e.preventDefault();
       console.log("sentenceArray" + this.sentenceArray);
       if (this.state.cursor === 1) {
         start = new Date();
         correct = 0;
       }
-      if (this.state.cursor === this.state.textLength-1) {
-        let acc = (correct / this.state.textLength) * 100;
+      if (this.state.cursor >= this.state.textLength-1) {          //accuracy get printed
+        let acc = Math.round((correct / this.state.textLength) * 100);
         this.setState({ accuracy: acc })
       }
-      let timeLapsed = (new Date() - start) / 60000;
+      let timeLapsed = (new Date() - start) / 60000;            //
       let WPM = Math.round(((this.state.cursor / 5) / timeLapsed));
       if (WPM > 0 && WPM != Infinity) {
-        this.setState({ speed: WPM })
+        this.setState({ speed: WPM })                //setting words per minute
       }
 
       $('document').ready(() => {
         if ($('.' + [this.state.cursor]).text() == e.key) {
-          $('.' + this.state.cursor).css({ "color": "green", "font-size": "40px" });
+          $('.' + this.state.cursor).css({ "color": "green", "font-size": "40px" });// if text matched with typed letter
           this.setState(prevState => ({ cursor: prevState.cursor + 1 }));
           correct++;
         }
         else if ($('.' + [this.state.cursor]).text() !== e.key) {
-          $('.' + this.state.cursor).css({ "color": "red", "font-size": "40px" });
+          $('.' + this.state.cursor).css({ "color": "red", "font-size": "40px" });// it text not matched with typed letter
           this.setState(prevState => ({ cursor: prevState.cursor + 1 }));
         }
         $('.' + this.state.cursor).css({
@@ -81,17 +88,10 @@ class Typing extends Component {
           <Progress prog={this.state.accuracy} />
           <SpeedGuage speed={this.state.speed} />
         </div>
-        <button className="btn btn-primary" onClick={this.changeText.bind(this)}>reset</button>
+        <button className="btn btn-primary" onClick={this.changeText.bind(this)}>Reset</button>
       </div>
     );
   }
 }
-const style_zoom = {
-  "display": "inline-block",
-  "font-size": "80px",
-  "border-width": "3px",
-  "margin": "2px",
-  "transition": "font-size 30ms ease-in",
-  "color": "black"
-}
+
 export default Typing;

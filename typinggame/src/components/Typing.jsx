@@ -48,8 +48,8 @@ class Typing extends Component {
         start = new Date();
         correct = 0;
       }
-      if (this.state.cursor >= this.state.textLength-1) {          //accuracy get printed
-        let acc = Math.round((correct / this.state.textLength) * 100);
+      if (this.state.cursor >= this.state.textLength) {          //accuracy get printed
+        let acc = Math.round((correct / (this.state.textLength-1)) * 100);
         this.setState({ accuracy: acc })
       }
       let timeLapsed = (new Date() - start) / 60000;            //

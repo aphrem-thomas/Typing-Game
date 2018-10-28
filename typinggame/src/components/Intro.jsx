@@ -12,7 +12,7 @@ class Intro extends Component {
 
         Touch typing (also called touch type or touch keyboarding) is typing without using the sense of sight to find the keys. Specifically, a touch typist will know their location on the keyboard through muscle memory
         <h1>Learn touch typing...</h1>
-        <Link to="/typing"> <button className="btn btn-pimary">let's start</button></Link>
+        <Link to="/typing"> <button className="btn btn-primary">let's start</button></Link>
       </div>
     );
   }

@@ -64,25 +64,25 @@
   position: absolute;
 }
 .cloud :nth-child(1){
-  animation: moveCloud 40s 20s infinite linear forwards;
+  animation: moveCloud 40s infinite linear forwards;
   opacity: .4;
   z-index: -10;
   
 }
 .cloud :nth-child(2){
-  animation: moveCloud 70s 20s infinite linear forwards;
+  animation: moveCloud 70s infinite linear forwards;
   opacity: .8;
   z-index: -9;
 
 }
 .cloud :nth-child(3){
-  animation: moveCloud 60s 20s infinite linear forwards;
+  animation: moveCloud 60s infinite linear forwards;
   opacity: .5;
   z-index: -7;
   
 }
 .cloud :nth-child(4){
-  animation: moveCloud 80s 20s infinite linear forwards;
+  animation: moveCloud 80s infinite linear forwards;
   opacity: .7;
   z-index: -8;
   

@@ -34,7 +34,6 @@
   display: flex;
   width:100%;
   height: 100vh;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -49,12 +48,44 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+ 
 }
-.clouds{
+.sun img{
+  transform: scale(1.4) translateY(-50px);
+  z-index: -40;
+  opacity: .8;
+}
+.cloud{
   display:flex;
-  position: absolute;
+  position: relative;
   left: 0;
+}
+.cloud img{
+  position: absolute;
+}
+.cloud :nth-child(1){
+  animation: moveCloud 40s 20s infinite linear forwards;
+  opacity: .4;
+  z-index: -10;
+  
+}
+.cloud :nth-child(2){
+  animation: moveCloud 70s 20s infinite linear forwards;
+  opacity: .8;
+  z-index: -9;
 
+}
+.cloud :nth-child(3){
+  animation: moveCloud 60s 20s infinite linear forwards;
+  opacity: .5;
+  z-index: -7;
+  
+}
+.cloud :nth-child(4){
+  animation: moveCloud 80s 20s infinite linear forwards;
+  opacity: .7;
+  z-index: -8;
+  
 }
 .typing{
   display: flex;
@@ -101,7 +132,7 @@
 }
 
 
-@keyframes CloudMove {
+@keyframes moveCloud {
   from {
     transform: translateX(-200px);
   }

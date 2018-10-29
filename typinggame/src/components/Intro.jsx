@@ -7,7 +7,14 @@ class Intro extends Component {
     return (
       <div className="intro">
         <div className="pictures">
+        <div className="cloud">
+            <img src={cloud}/>
+            <img src={cloud}/>
+            <img src={cloud}/>
+            <img src={cloud}/>
+          </div>
           <div className="sun"> <img src={sun} /> </div>
+         
         </div>
 
         Touch typing (also called touch type or touch keyboarding) is typing without using the sense of sight to find the keys. Specifically, a touch typist will know their location on the keyboard through muscle memory

@@ -8,9 +8,8 @@ class Progress extends Component {
     return (
     this.props.prog!==0?
       <div className="progressIndicator">
-      <h1 className="percent">{this.props.prog}%</h1>
-      <br/>
-      <h2 className="percent">accuracy</h2>
+      <div className="percent">{this.props.prog}%accuracy</div>
+      <div className="percent">{this.props.speed} WPM Speed</div>
       </div>
       :null
     );

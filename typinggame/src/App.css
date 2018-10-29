@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
-
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
 .App {
   text-align: center;
 }
@@ -84,10 +84,11 @@
   display: flex;
   flex:1;
   height: 100%;
+  flex-direction: column;
 }
 .percent{
-  font-size: 100px;
-  font-family:'Playfair Display';
+  font-size: 50px;
+  font-family: 'Merriweather';
   animation: zoomText .5s ease-in forwards;
 }
 @keyframes App-logo-spin {
